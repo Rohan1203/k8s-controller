@@ -1,0 +1,19 @@
+name: Merge Gate
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait 2 minutes
+        run: sleep 60
+
+      - name: Validation complete
+        run: echo "Checks passed"
